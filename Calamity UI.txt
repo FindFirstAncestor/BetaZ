@@ -102,7 +102,7 @@ function lib:Main()
         Size = UDim2.new(0, 17, 0, 30),
         Font = Enum.Font.GothamSemibold,
         Text = "¬",
-        TextColor3 = Color3.fromRGB(17, 124, 255),
+        TextColor3 = Color3.fromRGB(45, 45, 45)
         TextSize = 27.000,
         TextTransparency = 0.200,
     })
