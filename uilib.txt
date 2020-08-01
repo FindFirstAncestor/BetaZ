@@ -35,7 +35,7 @@ function lib:Notify(top, bottom)
 	notibody.Parent = NewUiLib
 	notibody.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	notibody.BorderSizePixel = 0
-	notibody.Position = UDim2.new(0, 367, 0, 30)
+	notibody.Position = UDim2.new(0, 104,0, 92)
 	notibody.Size = UDim2.new(0, 367, 0, 168)
 	notibody.Draggable = true
 	notibody.Active = true
