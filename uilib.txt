@@ -52,7 +52,7 @@ function lib:Notify(top, bottom)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then
 			dragging = true
 			dragStart = input.Position
-			startPos = main.MainBody.Position
+			startPos = NewUiLib.notibody.Position
 			repeat wait() until input.UserInputState == Enum.UserInputState.End
 			dragging = false
 		end
