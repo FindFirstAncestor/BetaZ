@@ -29,7 +29,7 @@ function lib:Notify(top, bottom)
 	local TextSolid = Instance.new("Frame")
  
 	NewUiLib.Name = "NewUiLib"
-	NewUiLib.Parent = game.CoreGui
+	NewUiLib.Parent = game.CoreGui.Calamity
  
 	notibody.Name = "notibody"
 	notibody.Parent = NewUiLib
