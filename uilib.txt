@@ -37,9 +37,38 @@ function lib:Notify(top, bottom)
 	notibody.BorderSizePixel = 0
 	notibody.Position = UDim2.new(0, 689,0,389)
 	notibody.Size = UDim2.new(0, 367, 0, 168)
-	notibody.Draggable = true
 	notibody.Active = true
-	notibody.Selectable = true
+    notibody.Selectable = true
+    local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		local delta = input.Position - dragStart
+		NewUiLib.notibody:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y),'Out','Linear',0.01,true)
+    end
+    
+	NewUiLib.notibody.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = main.MainBody.Position
+			repeat wait() until input.UserInputState == Enum.UserInputState.End
+			dragging = false
+		end
+    end)
+    
+	NewUiLib.notibody.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			dragInput = input
+		end
+    end)
+    
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+    end)
  
 	TopBar.Name = "TopBar"
 	TopBar.Parent = notibody
