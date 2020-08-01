@@ -76,7 +76,7 @@ function lib:Notify(top, bottom)
 	LogoText_2.Position = UDim2.new(0.00754730683, 0, -0.00833334029, 0)
 	LogoText_2.Size = UDim2.new(0, 17, 0, 30)
 	LogoText_2.Font = Enum.Font.GothamSemibold
-	LogoText_2.Text = "Â¬"
+	LogoText_2.Text = " Â¬"
 	LogoText_2.TextColor3 = Color3.fromRGB(17, 124, 255)
 	LogoText_2.TextSize = 27.000
 	LogoText_2.TextTransparency = 0.200
