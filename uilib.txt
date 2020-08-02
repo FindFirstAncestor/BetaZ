@@ -64,7 +64,7 @@ function lib:Notify(top, bottom)
 	LogoText.Position = UDim2.new(-0.0258602686, 0, -0.00833334029, 0)
 	LogoText.Size = UDim2.new(0, 52, 0, 30)
 	LogoText.Font = Enum.Font.GothamSemibold
-	LogoText.Text = " l"
+	LogoText.Text = "l"
 	LogoText.TextColor3 = Color3.fromRGB(65, 255, 65)
 	LogoText.TextSize = 27.000
 	LogoText.TextTransparency = 0.200
@@ -77,7 +77,7 @@ function lib:Notify(top, bottom)
 	LogoText_2.Position = UDim2.new(0.00754730683, 0, -0.00833334029, 0)
 	LogoText_2.Size = UDim2.new(0, 17, 0, 30)
 	LogoText_2.Font = Enum.Font.GothamSemibold
-	LogoText_2.Text = " Â¬"
+	LogoText_2.Text = "¬"
 	LogoText_2.TextColor3 = Color3.fromRGB(17, 124, 255)
 	LogoText_2.TextSize = 27.000
 	LogoText_2.TextTransparency = 0.200
@@ -90,7 +90,7 @@ function lib:Notify(top, bottom)
 	LogoText_3.Position = UDim2.new(-0.0258602761, 0, -0.00833334029, 0)
 	LogoText_3.Size = UDim2.new(0, 47, 0, 30)
 	LogoText_3.Font = Enum.Font.GothamSemibold
-	LogoText_3.Text = " k"
+	LogoText_3.Text = "k"
 	LogoText_3.TextColor3 = Color3.fromRGB(255, 28, 100)
 	LogoText_3.TextSize = 27.000
 	LogoText_3.TextTransparency = 0.200
