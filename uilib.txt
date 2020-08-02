@@ -205,24 +205,25 @@ function lib:Notify(top, bottom)
 			text:TweenPosition(text.Position + UDim2.new(0,0,0.05,0), "Out", "Linear", 0.1)
 			for i,v in pairs(text:GetChildren()) do
 				if v.Name == 'ImageLabel' then v.ImageTransparency = v.ImageTransparency + 0.3 else
-					v.TextTransparency = v.TextTransparency + 0.3
+					v.TextTransparency = v.TextTransparency + 0.2
 				end
 			end
 			topbar:TweenPosition(topbar.Position - UDim2.new(0,0,0.05,0), "Out", "Linear", 0.1)
 			for i,v in pairs(topbar.LogoTextFolder:GetChildren()) do
-				v.TextTransparency = v.TextTransparency + 0.3
+				v.TextTransparency = v.TextTransparency + 0.2
 			end
-			topbar.BackgroundTransparency = topbar.BackgroundTransparency + 0.3
+			topbar.BackgroundTransparency = topbar.BackgroundTransparency + 0.2
 			button:TweenPosition(button.Position + UDim2.new(0,0,0.05,0), "Out", "Linear", 0.1)
-			button.InfoText.TextTransparency = button.InfoText.TextTransparency + 0.3
-			button.BackgroundTransparency = button.BackgroundTransparency + 0.3
-			button.TextTransparency = button.TextTransparency + 0.3
-			gui.BackgroundTransparency = gui.BackgroundTransparency + 0.3
+			button.InfoText.TextTransparency = button.InfoText.TextTransparency + 0.2
+			button.BackgroundTransparency = button.BackgroundTransparency + 0.2
+			button.TextTransparency = button.TextTransparency + 0.2
+			gui.BackgroundTransparency = gui.BackgroundTransparency + 0.2
 			wait(0.1)
-			gui:Destroy()
 		end
+		gui:Destroy()
 	end)
 end
+
 
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
