@@ -466,7 +466,7 @@ function lib:Main()
                 TextXAlignment = Enum.TextXAlignment.Left,
             })
 
-            categories.Container.CanvasSize = categories.Container.CanvasSize + UDim2.new(0,0,0,30)
+            categories.Container.CanvasSize = categories.Container.CanvasSize + UDim2.new(0,0,0,40)
 
             function sections:Button(Name, CallBack, Animated)
                 local buttons = {}
