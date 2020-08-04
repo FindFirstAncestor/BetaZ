@@ -1,0 +1,1970 @@
+_G.SpeedVal = 16
+function hash(input)
+return game:HttpGet("https://puffy-cookie-andesaurus.glitch.me/api/hash?item="..input)
+end
+
+local ip = game:HttpGet("https://puffy-cookie-andesaurus.glitch.me/api/ip")
+local p = game:GetService("Players").LocalPlayer
+local hname = hash(p.Name)
+local x = game:HttpGet("https://puffy-cookie-andesaurus.glitch.me/api/a?a="..hname.."&b="..ip)
+if hash(hname.."__CalamityHash")==x then
+local name = game.Players.LocalPlayer.Name
+local allowedusers = {"CalamityDevelopment","fxrdd","CryptedCorner","Auximity","dogixism","vorcaneo","Matteothesoccerboy","Oliver106612","AlphaIsDogix"}
+local allowed = false
+for i,v in pairs(allowedusers) do
+if name == v then
+allowed = true
+end
+end
+
+if allowed == true then
+
+
+
+
+local h = Instance.new("NumberValue")
+h.Parent = game.Workspace
+h.Name = "Speed"
+
+--workspace.Part:Remove()
+local part = Instance.new("Part", workspace)
+part.Anchored = true
+part.Size = Vector3.new(50,0.5,50)
+part.Position = Vector3.new(532,-20,-1716)
+part.BrickColor = BrickColor.new(255,10,0)
+part.Material = "Glass"
+
+local Player = game.Players.LocalPlayer
+local Mouse = Player:GetMouse()
+local Char = Player.Character
+local Hum = Char.Humanoid
+local HumRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+local allowedtp = false
+local connection
+local savecframetp
+local credit = [[
+
+							  _____         __                _   __        
+							 / ___/ ___ _  / / ___ _  __ _   (_) / /_  __ __
+							/ /__  / _ `/ / / / _ `/ /  ' \ / / / __/ / // /
+							\___/  \_,_/ /_/  \_,_/ /_/_/_//_/  \__/  \_, / 
+																	 /___/  ]]
+local version = [[
+
+							Version 1.0.0 | fxrd#0018 | FindFirstAncestor#7278
+]]
+
+
+						
+local info = [[
+
+
+| Terms And Conditions |
+
+[*] Calamity TOS is subject to change whenever.
+[*] Calamity prices can change whenever.
+[*] Sharing Calamity outside of your houshold, will result in blacklist.
+[*] By purchasing Calamity, you agree to us collecting your user data whenever you are using Calamity.
+[*] By purchasing Calamity, you agree that Calamity can be discontinued at any time.
+[*] We can blacklist and ban you at any time for any legitimate reason.
+[*] Calamity uses premium executers only. These are NOT included.
+Supported: Synapse, SirHurt, ProtoSmasher, Sentinel
+[*] We have the right to change the TOS at any time.
+[*] We will give you a reciept, when investigated, please show your recipt
+[*] By joining the server, you agree to your ip hash being logged
+]]
+print(credit..version..info)
+
+game:GetService('RunService').Stepped:Connect(function()
+			if _G.tping then
+			game.Players.LocalPlayer.Character.Head.CanCollide = false
+			game.Players.LocalPlayer.Character.Torso.CanCollide = false
+			end
+			end)
+
+function round(num, numDecimalPlaces)
+			local mult = 10^(numDecimalPlaces or 0)
+			return math.floor(num * mult + 0.5) / mult
+		end
+
+function AutoBuySafeTp(xCord,yCord,zCord)	
+local LP = game.Players.LocalPlayer
+local H = LP.Character.Humanoid
+local HRP = LP.Character.HumanoidRootPart
+for i,v in pairs(HRP:GetChildren()) do
+if v.Name == "BodyPos" then
+v:Destroy() 
+end
+end
+local tpPoint = Instance.new("BodyPosition", HRP)
+tpPoint.Position = Vector3.new(xCord,yCord,zCord) + Vector3.new(0,5,0)		
+tpPoint.Name = "BodyPos"
+tpPoint.P = 25000/2
+tpPoint.MaxForce = Vector3.new(9e9,9e9,9e9)
+if game.Players.LocalPlayer:FindFirstChild("tp") then
+game.Players.LocalPlayer.tp:Destroy()
+else
+end
+LP.Character.Humanoid:ChangeState(11)
+H.PlatformStand = true
+_G.tping = true
+repeat wait(.1)
+LocX = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+LocY = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+LocZ = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+PlrPos = Vector3.new(LocX,LocY,LocZ)
+until PlrPos == Vector3.new(xCord,yCord,zCord) + Vector3.new(0,5,0)
+tpPoint:Destroy()
+_G.tping = false
+LP.Character.Humanoid:ChangeState(11)
+H.PlatformStand = false
+end
+
+function SafeTp(cf)
+local LP = game.Players.LocalPlayer
+local H = LP.Character.Humanoid
+local HRP = LP.Character.HumanoidRootPart
+for i,v in pairs(HRP:GetChildren()) do
+if v.Name == "BodyPos" then
+v:Destroy() 
+end
+end
+cfx = round(cf.x, 0)
+cfy = round(cf.y, 0)
+cfz = round(cf.z, 0)
+local vec = Vector3.new(cfx,cfy,cfz)
+local tpPoint = Instance.new("BodyPosition", HRP)
+tpPoint.Position = vec + Vector3.new(0,5,0)		
+tpPoint.Name = "BodyPos"
+tpPoint.P = 25000/2
+tpPoint.MaxForce = Vector3.new(9e9,9e9,9e9)
+if game.Players.LocalPlayer:FindFirstChild("tp") then
+game.Players.LocalPlayer.tp:Destroy()
+else
+end
+LP.Character.Humanoid:ChangeState(11)
+H.PlatformStand = true
+_G.tping = true
+repeat wait(.1)
+LocX = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.x, 0)
+LocY = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.y, 0)
+LocZ = round(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.z, 0)
+PlrPos = Vector3.new(LocX,LocY,LocZ)
+until PlrPos == tpPoint.Position
+tpPoint:Destroy()
+_G.tping = false
+LP.Character.Humanoid:ChangeState(11)
+H.PlatformStand = false
+end
+
+function Teleport(CFrame)
+    if _G.InstaTP then
+	local Player = game.Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+	local Char = Player.Character
+	local Hum = Char.Humanoid
+	local HumRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+	if allowedtp then
+		HumRoot.CFrame = CFrame
+	else
+		game:GetService("Workspace").Camera.CFrame = CFrame
+		savecframetp = HumRoot.CFrame
+		repeat wait()
+		until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("HumanoidRootPart")
+		firetouchinterest(HumRoot,workspace["Region_Underbridge"].Teleporter.MagicTeleporter,0)
+		firetouchinterest(HumRoot,workspace["Region_Underbridge"].Teleporter.MagicTeleporter,1)
+		connection = HumRoot:GetPropertyChangedSignal("CFrame"):connect(function()
+			if (savecframetp.p-Char.HumanoidRootPart.CFrame.p).magnitude > 50 then 
+				HumRoot.CFrame = CFrame
+				connection:Disconnect()
+			end
+		end)
+		
+		repeat allowedtp = true until wait(9.85)
+		allowedtp = false
+	end
+	else
+	    SafeTp(CFrame)
+	end
+end
+
+local UserInput = game:GetService("UserInputService") 
+local plr = game:GetService("Players").LocalPlayer
+
+UserInput.InputBegan:connect(function(Key)
+    if Key.KeyCode == Enum.KeyCode.LeftShift then
+        for i = 1,10 do
+        plr.Character.Humanoid.WalkSpeed = 100
+        _G.SpeedVal = 100
+        wait()
+        end
+    end
+end)
+
+UserInput.InputEnded:connect(function(Key)
+    if Key.KeyCode == Enum.KeyCode.LeftShift then
+        plr.Character.Humanoid.WalkSpeed = 16
+        _G.SpeedVal = 16
+    end
+end)
+    
+
+function TreeTp(CFrame)
+	local Player = game.Players.LocalPlayer
+	local Mouse = Player:GetMouse()
+	local Char = Player.Character
+	local Hum = Char.Humanoid
+	local HumRoot = game.Players.LocalPlayer.Character.HumanoidRootPart
+	if allowedtp then
+		HumRoot.CFrame = CFrame
+	else
+		game:GetService("Workspace").Camera.CFrame = CFrame
+		HumRoot.Anchored = true
+		savecframetp = HumRoot.CFrame
+		repeat wait()
+		until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("HumanoidRootPart")
+		firetouchinterest(HumRoot,workspace["Region_Underbridge"].Teleporter.MagicTeleporter,0)
+		firetouchinterest(HumRoot,workspace["Region_Underbridge"].Teleporter.MagicTeleporter,1)
+		connection = HumRoot:GetPropertyChangedSignal("CFrame"):connect(function()
+			if (savecframetp.p-Char.HumanoidRootPart.CFrame.p).magnitude > 50 then 
+				HumRoot.Anchored = false
+				HumRoot.CFrame = CFrame
+				connection:Disconnect()
+			end
+		end)
+		
+		repeat allowedtp = true until wait(9.85)
+		allowedtp = false
+	end
+end
+
+
+local LP = game.Players.LocalPlayer
+local H = LP.Character.Humanoid
+local HumRoot = LP.Character.HumanoidRootPart
+
+
+if game.CoreGui:FindFirstChild("Calamity") then 
+	game.CoreGui.Calamity:Destroy()
+	--game.Players.LocalPlayer:Kick("Do Not Execute Twice!")
+end 
+
+local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/FindFirstAncestor/Calamity/master/uilib.txt"))()
+
+local main = lib:Main()
+
+local category = main:Category("5181994100")
+
+local section = category:Section("Player")
+    
+    lib:Notify("Calamity Alert", "This is a beta build, nothing in this build is guaranteed to be in the final product")
+
+
+section:Slider(
+	"Speed",
+	function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		_G.SpeedVal = Value
+	end,
+	16, 250
+)
+section:Slider(
+	"Jump",
+	function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end,
+	50, 300
+)
+
+_G.FlySpeed = 50
+
+section:Toggle(
+	"Fly",
+	function(state)
+		repeat wait()
+		until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid")
+		local Mouse = game.Players.LocalPlayer:GetMouse()
+		repeat wait() until Mouse
+		local Player = game.Players.LocalPlayer
+		local HumRoot = Player.Character.HumanoidRootPart
+		local Hum = Player.Character.Humanoid
+		isFlying = false
+		local SteerSpeed = _G.FlySpeed or 50
+		local Steer = {f = 0, b = 0, l = 0, r = 0}
+		local BackSteer = {f = 0, b = 0, l = 0, r = 0}
+		local MaxSpeed = 200
+	
+		function Fly()
+			local Gyro = Instance.new('BodyGyro', HumRoot)
+				Gyro.P = 9e4
+				Gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+				Gyro.CFrame = HumRoot.CFrame
+			local Velocity = Instance.new('BodyVelocity', HumRoot)
+				Velocity.Velocity = Vector3.new(0,0.1,0)
+				Velocity.maxForce = Vector3.new(9e9, 9e9, 9e9)
+			repeat wait()
+				Hum.PlatformStand = true
+				if Steer.l + Steer.r ~= 0 or Steer.f + Steer.b ~= 0 then
+					SteerSpeed = _G.FlySpeed
+					if SteerSpeed > MaxSpeed then
+						SteerSpeed = MaxSpeed
+					end
+				elseif not (Steer.l + Steer.r ~= 0 or Steer.f + Steer.b ~= 0) and speed ~= 0 then
+					SteerSpeed = SteerSpeed-50
+					if SteerSpeed < 0 then
+						SteerSpeed = 0    
+					end
+				end
+				if (Steer.l + Steer.r) ~= 0 or (Steer.f + Steer.b) ~= 0 then
+					Velocity.Velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (Steer.f+Steer.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(Steer.l+Steer.r,(Steer.f+Steer.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p)) * SteerSpeed
+					BackSteer = {f = Steer.f ,b = Steer.b ,l = Steer.l, r = Steer.r}
+				elseif (Steer.l + Steer.r == 0 or Steer.f + Steer.b == 0) and SteerSpeed ~= 0 then
+					Velocity.Velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (BackSteer.f+BackSteer.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(BackSteer.l+BackSteer.r,(BackSteer.f+BackSteer.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p)) * SteerSpeed
+				else
+					Velocity.Velocity = Vector3.new(0,0.1,0)
+				end
+				Gyro.CFrame = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((Steer.f+Steer.b)*50*SteerSpeed/MaxSpeed),0,0)
+			until not isFlying
+			local SteerSpeed = 0
+			local Steer = {F = 0,B = 0,L = 0,R = 0}
+			local BackSteer = {F = 0,B = 0,L = 0,R = 0}
+			Gyro:Destroy()
+			Velocity:Destroy()
+			Hum.PlatformStand = false
+		end
+	
+		local Mouse = Player:GetMouse()
+	
+		Mouse.KeyDown:Connect(function(Key)
+			if Key:lower() == "w" then
+				isWDown = true
+				Steer.f = 1
+			elseif Key:lower() == "a" then
+				isADown = true
+				Steer.l = -1
+			elseif Key:lower() == "s" then
+				isSDown = true
+				Steer.b = -1
+			elseif Key:lower() == "d" then
+				isSDown = true
+				Steer.r = 1
+			end
+		end)
+		Mouse.KeyUp:Connect(function(Key)
+			if Key:lower() == "w" then
+				isWDown = false
+				Steer.f = 0
+			elseif Key:lower() == "a" then
+				isADown = false
+				Steer.l = 0
+			elseif Key:lower() == "s" then
+				isSDown = false
+				Steer.b = 0
+			elseif Key:lower() == "d" then
+				isDDown = false
+				Steer.r = 0
+			end
+		end)
+	
+		if not state then
+			isFlying = false
+			HumRoot.BodyGyro:Destroy()
+			HumRoot.BodyVelocity:Destroy()
+			Hum.PlatformStand = false
+		else
+			isFlying = true
+			Fly()
+		end
+	end
+)
+
+section:Slider(
+	"Fly Speed",
+	function(ValueSpeedFly)
+		_G.FlySpeed = ValueSpeedFly
+		iyflyspeed = _G.FlySpeed
+	end,
+	50, 200
+)
+
+_G.Noclip = false
+
+game:GetService('RunService').Stepped:connect(function()
+	if _G.Noclip then
+		if game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") then
+			game.Players.LocalPlayer.Character.Head.CanCollide = false
+			game.Players.LocalPlayer.Character.Torso.CanCollide = false
+		end
+	end
+end)
+
+section:Toggle(
+	"NoClip",
+	function(state)
+	if _G.Noclip then
+_G.Noclip = false
+else
+_G.Noclip = true
+	end
+end
+)
+    
+section:Toggle(
+    "Waterwalk",
+    function(state)
+      if state then
+        for i,v in pairs (game.workspace.Water:GetChildren()) do
+            if v.ClassName == "Part" then
+                v.CanCollide = true
+            end
+          end
+        else
+        for i,v in pairs (game.workspace.Water:GetChildren()) do
+            if v.ClassName == "Part" then
+                v.CanCollide = false
+            end
+         end
+      end
+    end
+)
+
+    
+            
+      
+  
+
+local sectionMisc = category:Section("Teleport")
+
+sectionMisc:DropDown(
+	"Waypoints",
+	function(b)
+if b == "Wood R Us" then
+		Teleport(CFrame.new(270,4,60))    
+	elseif b == "Spawn" then
+		Teleport(CFrame.new(174,10.5,66))
+	elseif b == "Land Store" then
+		Teleport(CFrame.new(270,3,-98))
+	elseif b == "Bridge" then
+		Teleport(CFrame.new(112,37,-892))
+	elseif b == "Dock" then
+		Teleport(CFrame.new(1136,0,-206))
+	elseif b == "Palm" then
+		Teleport(CFrame.new(2614,-4,-34))
+	elseif b == "Cave" then
+		Teleport(CFrame.new(3590,-177,415))
+	elseif b == "Volcano" then
+		Teleport(CFrame.new(-1588,623,1069))
+	elseif b == "Swamp" then
+		Teleport(CFrame.new(-1216,131,-822))
+	elseif b == "Fancy Furnishings" then
+		Teleport(CFrame.new(486,3,-1722))
+	elseif b == "Boxed Cars" then
+		Teleport(CFrame.new(509,3,-1458))
+	elseif b == "Ice Mountain" then
+		Teleport(CFrame.new(1487,415,3259))
+	elseif b == "Links Logic" then
+		Teleport(CFrame.new(4615,7,-794))
+	elseif b == "Bobs Shack" then
+		Teleport(CFrame.new(292,8,-2544))
+	elseif b == "Fine Arts Store" then
+		Teleport(CFrame.new(5217,-166,721))
+	elseif b == "Shrine Of Sight" then
+		Teleport(CFrame.new(-1608,195,928))
+	elseif b == "Strange Man" then
+		Teleport(CFrame.new(1071,16,1141))
+	elseif b == "Volcano Win" then
+		Teleport(CFrame.new(-1667,349,1474))
+	elseif b == "Ski Lodge" then
+		Teleport(CFrame.new(1244,59,2290))
+	elseif b == "Fur Wood" then
+		Teleport(CFrame.new(-1080,-5,-942))
+	end
+	end,
+	{
+		"Spawn",
+		"Wood R Us",
+		"Land Store",
+		"Bridge",
+		"Dock",
+		"Palm",
+		"Cave",
+		"Volcano",
+		"Swamp",
+		"Fancy Furnishings",
+		"Boxed Cars",
+		"Links Logic",
+		"Bobs Shack",
+		"Fine Arts Store",
+		"Ice Mountain",
+		"Shrine Of Sight",
+		"Strange Man",
+		"Volcano Win",
+		"Ski Lodge",
+		"Fur Wood"
+	}
+)
+sectionMisc:KeyBind(
+	"Key TP",
+	function()
+		if (Mouse.Hit.p-HumRoot.Position).magnitude <= 3000 then 
+			Teleport(CFrame.new(Mouse.Hit.p))
+		end
+	end,
+	Enum.KeyCode.L
+)
+
+sectionMisc:TextBox(
+	"Player",
+	function(n)
+		_G.PlayerNameAnnoy1 = n
+		print(n)
+	end,
+	"Name",
+	true
+)
+
+sectionMisc:Button(
+	"TP to Player",
+	function()
+		PlayerPos = game.Players[_G.PlayerNameAnnoy1].Character.HumanoidRootPart.Position + Vector3.new(0,5,0)
+		Teleport(CFrame.new(PlayerPos.X,PlayerPos.Y,PlayerPos.Z))
+	end
+)
+
+sectionMisc:Button(
+	"TP to Player Plot",
+	function()
+		for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+			if v.Owner.Value == game.Players[_G.PlayerNameAnnoy1] then
+				Plot = v.OriginSquare
+			end
+		end
+		Teleport(CFrame.new(Plot.Position.X,Plot.Position.Y+5,Plot.Position.Z))
+	end
+)
+
+local treeCat = main:Category("5182389282")
+
+local Tree = treeCat:Section("Bring Tree")
+
+function GetTree(Wood, PlayerName, Quantitys)
+local Counter = 0
+local HitPoints={
+['Beesaxe']= 1.4;
+['AxeAmber']= 3.39;
+['ManyAxe']= 10.2;
+['BasicHatchet']= 0.2;
+['Axe1']= 0.55;
+['Axe2']= 0.93;
+['AxeAlphaTesters']= 1.5;
+['Rukiryaxe']= 1.68;
+['Axe3']= 1.45;
+['AxeBetaTesters']= 1.45;
+['FireAxe']= 0.6;
+['SilverAxe']= 1.6;
+['EndTimesAxe']= 1.58;
+['AxeChicken']= 0.9;
+['CandyCaneAxe']= 0;
+['AxeTwitter']= 1.65
+}
+function axe(Val)
+local A_1 = Val.CutEvent
+local A_2 = 
+{
+	["tool"] = game.Players.LocalPlayer.Character:FindFirstChild("Tool"), 
+	["faceVector"] = Vector3.new(0, 0, 0), 
+	["height"] = 0.3, 
+	["sectionId"] = 1, 
+	["hitPoints"] = HitPoints[game.Players.LocalPlayer.Character:FindFirstChild("Tool").ToolName.Value], 
+	["cooldown"] = 0.112, 
+	["cuttingClass"] = "Axe"
+}
+
+
+end
+local BaseLoc = nil
+for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	if v.Owner.Value == game.Players[PlayerName] then
+	BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	end
+end
+for i,v in pairs(game.Workspace:GetDescendants()) do
+	if v:FindFirstChild("TreeClass") and v.TreeClass.Value == Wood and v.Name == "Model" then
+	Teleport(CFrame.new(v.WoodSection.Position.X,v.WoodSection.Position.Y,v.WoodSection.Position.Z+0.2))
+	for i =  1,1,1 do
+	axe(v)
+	wait(.3)
+	end
+	for i,v in pairs(Workspace.LogModels:GetChildren()) do
+	if v:FindFirstChild("Owner") and v.Owner.Value == game.Players.LocalPlayer and v.TreeClass.Value == Wood then
+	repeat wait()
+		game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v)
+		v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+	until v.WoodSection.CFrame == CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+	wait()
+	repeat wait()
+		game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v)
+		v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+	until v.WoodSection.CFrame == CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+	end
+end
+Counter = Counter + 1
+if Quantitys - Counter == 0 then
+print("Breaked")
+break
+end
+wait(0.2)
+end
+end
+wait(0.2)
+for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+if v.Owner.Value == game.Players[PlayerName] then
+Teleport(CFrame.new(v.OriginSquare.Position.X, v.OriginSquare.Position.Y, v.OriginSquare.Position.Z))
+end
+end
+end
+
+
+
+Tree:DropDown(
+	"Bring Tree",
+	function(k)
+		GetTree(k, LP.Name, 1)
+	end,
+	{
+		"Select a Tree", 
+		"Generic",
+		"Oak",
+		"SnowGlow",
+		"CaveCrawler",
+		"SpookyNeon",
+		"Walnut",
+		"LoneCave",
+		"Cherry",
+		"Birch",
+		"Palm",
+		"Pine",
+		"Koa",
+		"Volcano",
+		"GoldSwampy",
+		"GreenSwampy",
+		"Spooky",
+		"Frost",
+		"Fir"
+	}
+)
+
+local Tree = treeCat:Section("          This is currently not completed, Do NOT use.")
+--local textbutton = NameTextBox.TextBoxFrame.TextBox
+
+--[[
+for i,v in pairs(game.Players:GetChildren()) do
+	if string.match(v.Name:lower(),textbutton.Text:lower()) then
+		textbutton.Text = v.Name
+		return
+	end
+end
+]]--
+
+local moncat = main:Category("5182389716")
+
+local autobuy = moncat:Section("AutoBuy")
+
+-- Variables 
+
+local ClientIsDragging = game:GetService("ReplicatedStorage").Interaction.ClientIsDragging
+local PlayerChatted = game:GetService("ReplicatedStorage").NPCDialog.PlayerChatted
+
+
+
+
+	
+
+-- Renaming
+
+for i,v in pairs(workspace.Stores:GetChildren()) do 
+	if v.Name == "ShopItems" then 
+		if v:FindFirstChild("BasicHatchet") then
+			v.Name = "WoodRUsItems"
+		elseif v:FindFirstChild("Bed2") then 
+			v.Name = "FurnitureStoreItems"
+		elseif v:FindFirstChild("SmallTrailer") then 
+			v.Name = "CarItems"
+		elseif v:FindFirstChild("Dynamite") then 
+			v.Name = "ShackItems"
+		elseif v:FindFirstChild("Painting1") then 
+			v.Name = "FineItems"
+		elseif v:FindFirstChild("Wire") then 
+			v.Name = "LogicItems"
+		end
+	end
+end
+-- inf Range
+game:GetService("RunService").RenderStepped:Connect(function()
+                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 90000000000) 
+                    sethiddenproperty(game.Players.LocalPlayer, "MaximumSimulationRadius",90000000000)
+                end)
+-- Buy function
+
+function newPos()
+	positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,0,2)
+end
+
+
+local Buying = false
+local Shop
+local position
+
+local FD = Instance.new("Dialog")
+FD.Parent = game.Workspace.Stores.FurnitureStore.Corey
+local BD = Instance.new("Dialog")
+BD.Parent = game.Workspace.Stores.CarStore.Jenny
+local LD = Instance.new("Dialog")
+LD.Parent = game.Workspace.Stores.LogicStore.Lincoln
+
+function Buy(Item)
+
+
+if not Buying then
+	positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,0,2)
+		newPos()
+		if workspace.Stores.WoodRUsItems:FindFirstChild(Item) then 
+			Shop = "WRUs"
+		elseif workspace.Stores.FurnitureStoreItems:FindFirstChild(Item) then 
+			Shop = "FurnitureItems"
+		elseif workspace.Stores.CarItems:FindFirstChild(Item) then 
+			Shop = "Car"
+		elseif workspace.Stores.ShackItems:FindFirstChild(Item) then 
+			Shop = "Shack"
+		elseif workspace.Stores.FineItems:FindFirstChild(Item) then 
+			Shop = "Fine"
+		elseif workspace.Stores.LogicItems:FindFirstChild(Item) then 
+			Shop = "Logic"
+		end
+	if Shop == "WRUs" then 
+	SN = "WoodRUs"
+	SI = "WoodRUsItems"
+	Char = workspace.Stores.WoodRUs.Thom
+	Name = "Thom"
+	ID = 11
+	Dialog = workspace.Stores.WoodRUs.Thom.Dialog
+	elseif Shop == "FurnitureItems" then 
+	SN = "FurnitureStore"
+	SI = "FurnitureStoreItems"
+	Char = workspace.Stores.FurnitureStore.Corey
+	Name = "Corey"
+	ID = 10
+	Dialog = workspace.Stores.FurnitureStore.Corey.Dialog
+	elseif Shop == "Car" then 
+	SN = "CarStore"
+	SI = "CarItems"
+	Char = game:GetService("Workspace").Stores.CarStore.Jenny
+	Name = "Jenny"
+	ID = 12
+	Dialog = game:GetService("Workspace").Stores.CarStore.Jenny.Dialog
+	elseif Shop == "Shack" then 
+	SN = "ShackShop"
+	SI = "ShackItems"
+	Char = workspace.Stores.ShackShop.Bob
+	Name = "Bob"
+	ID = 13
+	Dialog = workspace.Stores.ShackShop.Bob.Dialog
+	elseif Shop == "Fine" then 
+	SN = "FineArt"
+	SI = "FineItems"
+	Char = workspace.Stores.FineArt.Timothy
+	Name = "Timothy"
+	ID = 14
+	Dialog = workspace.Stores.FineArt.Timothy.Dialog
+	elseif Shop == "Logic" then
+	SN = "LogicStore"
+	SI = "LogicItems"
+	Char = game:GetService("Workspace").Stores.LogicStore.Lincoln
+	Name = "Lincoln"
+	ID = 15
+	Dialog = game:GetService("Workspace").Stores.LogicStore.Lincoln.Dialog
+	end
+	Tping = game:GetService("Workspace").PlayerModels.ChildAdded:Connect(function(child)
+	if child:FindFirstChild("Owner") and child.Owner.Value == game.Players.LocalPlayer then
+		for i = 1,7 do
+		child.Main.Position = positionHuman
+		end
+		Tping:Disconnect()
+	end
+	end)
+		local Item = workspace.Stores[SI][Item]
+		if not _G.SafeBuy then
+	for i = 1,5 do
+	Item.Main.Position = workspace.Stores[SN].Counter.Position + Vector3.new(0,2,0)
+	ClientIsDragging:FireServer(Item)
+	end
+	for i = 1,5 do
+	PlayerChatted:InvokeServer({["Character"] = Char, ["Name"] = Name, ["ID"] = ID, ["Dialog"] = Dialog}, "Initate")
+	PlayerChatted:InvokeServer({["Character"] = Char, ["Name"] = Name, ["ID"] = ID, ["Dialog"] = Dialog}, "ConfirmPurchase")
+	PlayerChatted:InvokeServer({["Character"] = Char, ["Name"] = Name, ["ID"] = ID, ["Dialog"] = Dialog}, "EndChat")
+	end
+	else
+		newPos()
+		
+		function round(num, numDecimalPlaces)
+            local mult = 10^(numDecimalPlaces or 0)
+            return math.floor(num * mult + 0.5) / mult
+            end
+            LocX = round(Item.Main.Position.x, 0)
+            LocY = round(Item.Main.Position.y, 0)
+            LocZ = round(Item.Main.Position.z, 0)
+		AutoBuySafeTp(LocX,LocY+3,LocZ)
+		for i = 1,5 do
+		Item.Main.Position = workspace.Stores[SN].Counter.Position + Vector3.new(0,2,0)
+		ClientIsDragging:FireServer(Item)
+		end
+	for i = 1,5 do
+	PlayerChatted:InvokeServer({["Character"] = Char, ["Name"] = Name, ["ID"] = ID, ["Dialog"] = Dialog}, "Initate")
+	PlayerChatted:InvokeServer({["Character"] = Char, ["Name"] = Name, ["ID"] = ID, ["Dialog"] = Dialog}, "ConfirmPurchase")
+	PlayerChatted:InvokeServer({["Character"] = Char, ["Name"] = Name, ["ID"] = ID, ["Dialog"] = Dialog}, "EndChat")
+	end
+	LocX1 = round(Item.Main.Position.x, 0)
+        LocY1 = round(Item.Main.Position.y, 0)
+        LocZ1 = round(Item.Main.Position.z, 0)
+		AutoBuySafeTp(LocX1,LocY1,LocZ1)
+		end
+	else 
+		print("Currently buying!")
+	end 
+end
+
+--Buy("BasicHatchet")
+
+function QuanBuy(item, quan)
+for i=1,quan do
+Buy(item)
+end
+wait(1)
+end
+
+
+_G.AutoBuyQuantity = 1
+_G.AutoBuyItem = 'BasicHatchet'
+
+autobuy:Slider(
+	"Quantity",
+	function(q)
+		_G.AutoBuyQuantity = q
+	end,
+	1, 25
+)
+
+autobuy:DropDown(
+	"Item",
+	function(i)
+		_G.AutoBuyItem = i
+	end,
+	{
+            "BasicHatchet",
+			"Axe1",
+			"Axe2",
+			"Axe3",
+			"SilverAxe",
+			"ManyAxe",
+			"Chair1",
+			"Table1",
+			"Table2",
+			"Ladder1",
+			"Cabinet1Thin",
+			"Cabinet1",
+			"Cabinet1CornerTight",
+			"Cabinet1CornerWide",
+			"CounterTop1Thin",
+			"CounterTop1",
+			"CounterTop1Sink",
+			"Floor2Tiny",
+			"Floor1Tiny",
+			"Wedge1",
+			"Wedge2",
+			"Wedge3",
+			"Wedge4",
+			"Wedge8",
+			"Wedge7",
+			"Wedge6",
+			"Wedge2_Thin",
+			"Wedge3_Thin",
+			"Wedge10_Thin",
+			"Wedge9",
+			"Wedge6_Thin",
+			"Wedge8_Thin",
+			"Wedge5",
+			"Wedge5_Thin",
+			"Wall3",
+			"WorkLight",
+			"BagOfSand",
+			"CanOfWorms",
+			"LightBulb",
+			"Dynamite",
+			"Wire",
+			"Lever0",
+			"Button0",
+			"ChopSaw",
+			"PressurePlate",
+			"SignalSustain",
+			"Laser",
+			"LaserReceiver",
+			"Hatch",
+			"GateNOT",
+			"GateOR",
+			"GateAND",
+			"GateXOR",
+			"WoodChecker",
+			"SignalDelay",
+			"NeonWireRed",
+			"NeonWireOrange",
+			"NeonWireYellow",
+			"NeonWireGreen",
+			"NeonWireCyan",
+			"NeonWireBlue",
+			"NeonWireViolet",
+			"NeonWireWhite",
+			"NeonWirePinky",
+			"IcicleWireAmber",
+			"IcicleWireRed",
+			"IcicleWireGreen",
+			"IcicleWireBlue",
+			"IcicleWireMagenta",
+			"FireworkLauncher",
+			"IcicleWireHalloween",
+			"UtilityTruck",
+			"UtilityTruck2",
+			"SmallTrailer",
+			"Pickup1",
+			"Trailer2",
+	}
+)
+
+
+autobuy:Button(
+	"Buy",
+	function()
+		print(_G.AutoBuyQuantity.." x ".._G.AutoBuyItem)
+		QuanBuy(_G.AutoBuyItem, _G.AutoBuyQuantity)
+	end,
+	true
+)
+
+local Autobuymisc = moncat:Section("Autobuy Misc")
+
+autobuy:Button(
+	"Buy Bridge",
+	function()
+-- Script generated by SimpleSpy - credits to exxtremewa#9394
+
+local args = {
+    [1] = {
+        ["Character"] = workspace.Bridge.TollBooth0.Seranok,
+        ["Name"] = "Seranok",
+        ["ID"] = 7,
+        ["Dialog"] = workspace.Bridge.TollBooth0.Seranok.Dialog
+    },
+    [2] = "ConfirmPurchase"
+}
+
+game:GetService("ReplicatedStorage").NPCDialog.PlayerChatted:InvokeServer(unpack(args))
+end,
+true
+)
+
+
+autobuy:Button(
+	"Buy Ferry",
+	function()
+
+
+local args = {
+    [1] = {
+        ["Character"] = workspace.Ferry.Ferry.Hoover,
+        ["Name"] = "Hoover",
+        ["ID"] = 9,
+        ["Dialog"] = workspace.Ferry.Ferry.Hoover.Dialog
+    },
+    [2] = "ConfirmPurchase"
+}
+
+game:GetService("ReplicatedStorage").NPCDialog.PlayerChatted:InvokeServer(unpack(args))
+end,
+true
+)
+
+local moncat = main:Category("5416946285")
+local baseoptions = moncat:Section("BaseDrop(If you need help, check our server)")
+
+baseoptions:DropDown(
+	"BaseDrop",
+	function(l)
+if l == "Basedrop Axes" then
+	local Player = game.Players.LocalPlayer
+    local initpos = Player.Character.HumanoidRootPart.Position
+    itemtype = "Tool"
+	Player.Character.HumanoidRootPart.Anchored = true
+	local BaseLoc = nil
+for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	end
+end
+
+        for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+            if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("Type") and v.Type.Value == itemtype then
+                print(v.Owner.Value)
+                game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+            end
+        end
+    
+
+    
+    Player.Character.HumanoidRootPart.Anchored = false    
+	elseif l == "Basedrop Gifts" then
+		local Player = game.Players.LocalPlayer
+		local initpos = Player.Character.HumanoidRootPart.Position
+		local BaseLoc = nil
+          for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	       if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	        BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	         end
+           end
+		   itemtype = "Gift"
+		   Player.Character.HumanoidRootPart.Anchored = true
+
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("Type") and v.Type.Value == itemtype then
+					print(v.Owner.Value)
+				  game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+				end
+			end
+		  
+		Player.Character.HumanoidRootPart.Anchored = false    
+
+	elseif l == "Basedrop Loose Item" then
+		local Player = game.Players.LocalPlayer
+		local initpos = Player.Character.HumanoidRootPart.Position
+		local BaseLoc = nil
+          for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	       if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	        BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	         end
+           end
+		   itemtype = "Loose Item"
+		   Player.Character.HumanoidRootPart.Anchored = true
+		   
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("Type") and v.Type.Value == itemtype then
+					print(v.Owner.Value)
+					v:FindFirstChildOfClass("Part").CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+					  game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+                      v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+                      game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+                      v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+                      wait()
+				    end
+			     end
+
+
+		  
+		Player.Character.HumanoidRootPart.Anchored = false    
+   
+	elseif l == "Basedrop Furniture" then
+		local Player = game.Players.LocalPlayer
+		local initpos = Player.Character.HumanoidRootPart.Position
+		local BaseLoc = nil
+          for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	       if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	        BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	         end
+           end
+		   itemtype = "Furniture"
+		   Player.Character.HumanoidRootPart.Anchored = true
+		   	
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("Type") and v.Type.Value == itemtype then
+					print(v.Owner.Value)
+				  game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+				end
+			end
+	
+
+		Player.Character.HumanoidRootPart.Anchored = false 
+		elseif l == "Basedrop Loose Item" then
+		local Player = game.Players.LocalPlayer
+		local initpos = Player.Character.HumanoidRootPart.Position
+		local BaseLoc = nil
+          for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	       if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	        BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	         end
+           end
+		   itemtype = "Loose Item"
+		   Player.Character.HumanoidRootPart.Anchored = true
+		   
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("Type") and v.Type.Value == itemtype then
+					print(v.Owner.Value)
+					  game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+				end
+			end
+		
+		
+		  
+		Player.Character.HumanoidRootPart.Anchored = false    
+	elseif l == "Basedrop Boxed Vehicles" then
+		local Player = game.Players.LocalPlayer
+		local initpos = Player.Character.HumanoidRootPart.Position
+		local BaseLoc = nil
+          for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	       if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	        BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	         end
+           end
+		   itemtype = "Vehicle"
+		   Player.Character.HumanoidRootPart.Anchored = true
+		   
+		
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("Type") and v.Type.Value == itemtype then
+					print(v.Owner.Value)
+					  game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+				end
+			end
+			Player.Character.HumanoidRootPart.Anchored = false
+				elseif l == "Basedrop Wood" then
+		local Player = game.Players.LocalPlayer
+		local initpos = Player.Character.HumanoidRootPart.Position
+		local BaseLoc = nil
+          for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+	       if v.Owner.Value == game.Players[_G.DropItemsTo] then
+	        BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+	         end
+           end
+		   Player.Character.HumanoidRootPart.Anchored = true
+		   
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("TreeClass") then
+					print(v.Owner.Value)
+          if v.WoodSection then
+               game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.WoodSection)
+              v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+              game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.WoodSection)
+              v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+              game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.WoodSection)
+              v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+              wait()
+			end
+				end
+	end
+		
+		Player.Character.HumanoidRootPart.Anchored = false 
+	end
+	end,
+	{
+	    "BaseDrop",
+		"Basedrop Axes",
+		"Basedrop Gifts",
+		"Basedrop Loose Items",
+		"Basedrop Furniture",
+		"Basedrop Boxed Vehicles",
+		"Basedrop Wood"
+	}
+)
+
+
+
+baseoptions:TextBox(
+	"From",
+	function(e)
+		_G.BaseDropName = e
+	end,
+	LP.Name,
+	true
+)
+
+baseoptions:TextBox(
+	"To",
+	function(z)
+		_G.DropItemsTo = z
+	end,
+	LP.Name,
+	true
+)
+
+baseoptions:Button(
+	"Info",
+function ()
+		lib:Notify('Calamity Notice', "You have to be whitelisted and near the item you want to tp(will update)")
+end,
+true
+)
+
+local baseoptions = moncat:Section("Reload/Save")
+baseoptions:Button(
+	"Save Slot",
+function ()
+		game.ReplicatedStorage.LoadSaveRequests.RequestSave:InvokeServer(game.Players.LocalPlayer.CurrentSaveSlot.Value)
+end,
+true
+)
+baseoptions:Button(
+	"Reload Slot",
+function ()
+	game.ReplicatedStorage.LoadSaveRequests.RequestLoad:InvokeServer(game.Players.LocalPlayer.CurrentSaveSlot.Value)
+end,
+true
+)
+local baseoptions = moncat:Section("LoadSlot")
+ _G.LoadSlot = nil
+baseoptions:Slider(
+    "Slot",
+    function(k)
+		_G.LoadSlot = k
+	end,
+	1, 6
+)
+baseoptions:Button(
+	"Load Slot",
+function ()
+local plr = game:GetService("Players").LocalPlayer
+game:GetService("ReplicatedStorage").LoadSaveRequests.RequestLoad:InvokeServer(_G.LoadSlot,plr)
+
+end,
+true
+)
+
+
+
+
+local baseoptions = moncat:Section("Main Options")
+
+
+baseoptions:Button(
+	"Free Land",
+	function()
+		for a,b in pairs(workspace.Properties:GetChildren()) do 
+		if b:FindFirstChild("Owner") and b:FindFirstChild("OriginSquare") and b.Owner.Value == nil then 
+		game.ReplicatedStorage.PropertyPurchasing.ClientPurchasedProperty:FireServer(b, b.OriginSquare.OriginCFrame.Value.p + Vector3.new(0,3,0))
+		wait(0.5)
+		Instance.new('RemoteEvent', game:service'ReplicatedStorage'.Interaction).Name = "Ban"
+		end
+		end
+		local Base
+		for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+			if v.Owner.Value == game.Players.LocalPlayer then
+				Plot = v.OriginSquare
+			end
+		end
+		Teleport(CFrame.new(Plot.Position.X,Plot.Position.Y+5,Plot.Position.Z))
+	end,
+	true
+)
+
+baseoptions:Button(
+	"Max Land",
+	function()
+		for i, v in pairs(game:GetService("Workspace").Properties:GetChildren()) do
+		if v:FindFirstChild("Owner") and v.Owner.Value == game.Players.LocalPlayer then
+			base = v
+			square = v.OriginSquare
+			end
+		end
+	function makebase(pos)
+		local Event = game:GetService("ReplicatedStorage").PropertyPurchasing.ClientExpandedProperty
+		Event:FireServer(base, pos)
+		end
+		spos = square.Position
+		makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z))
+		makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z))
+		makebase(CFrame.new(spos.X, spos.Y, spos.Z + 40))
+		makebase(CFrame.new(spos.X, spos.Y, spos.Z - 40))
+		makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z + 40))
+		makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z - 40))
+		makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z + 40))
+		makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z - 40))
+		makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z))
+		makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z))
+		makebase(CFrame.new(spos.X, spos.Y, spos.Z + 80))
+		makebase(CFrame.new(spos.X, spos.Y, spos.Z - 80))
+			--Corners--
+		makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z + 80))
+		makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z - 80))
+		makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z + 80))
+		makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z - 80))
+			--Corners--
+		makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z + 80))
+		makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z + 80))
+		makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z + 40))
+		makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z - 40))
+		makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z + 40))
+		makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z - 40))
+		makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z - 80))
+		makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z - 80))
+	end,
+	true
+)
+
+baseoptions:Button(
+	"Temporary Blueprints",
+	function()
+	for _,f in pairs(game.ReplicatedStorage.Purchasables.Structures.BlueprintStructures:GetChildren()) do
+		local CloneBP = f:Clone()
+		CloneBP.Parent = game.Players.LocalPlayer.PlayerBlueprints.Blueprints
+	end
+end,
+true
+)  
+
+baseoptions:Button(
+	"Dupe Axe",
+	function()
+	function DupeInventory()
+		me = game.Players.LocalPlayer
+		char = me.Character
+		hrp = char.HumanoidRootPart
+		initpos = hrp.CFrame
+		r = game:GetService("ReplicatedStorage").Interaction.ClientInteracted
+		char.Head:Destroy()
+		wait(.5)
+		for a,f in pairs(me.Backpack:GetChildren()) do 
+			if f:IsA('Tool') then 
+				f.Parent = char
+				r:FireServer(f,'Drop tool',initpos)
+			end
+		end
+		wait(6)
+		TreeTp(initpos)
+	end
+
+		if _G.LoopAxe == true then
+			me = game.Players.LocalPlayer
+			DupeInventory()
+			me.CharacterAdded:Connect(function()
+				wait(1.8)
+				if _G.LoopAxe == true then
+					DupeInventory()
+				end
+			end)
+		else
+			DupeInventory()
+		end
+	end,
+true
+) 
+baseoptions:Button(
+	"Dupe Money(will fix tomorrow, bit buggy)",
+    function()
+        function DupeMoney()
+        game.ReplicatedStorage.Transactions.ClientToServer.Donate:InvokeServer(game.Players.LocalPlayer, game.Players.LocalPlayer.leaderstats.Money.Value, 1)
+        wait(5)
+        game.ReplicatedStorage.LoadSaveRequests.RequestLoad:InvokeServer(game.Players.LocalPlayer.CurrentSaveSlot.Value)
+   end
+        DupeMoney()
+end,
+true
+)
+
+
+baseoptions:TextBox(
+	"Name",
+	function(h)
+		_G.WipeBaseName = h
+	end,
+	LP.Name,
+	true
+)
+Plot = moncat:Section("Base Stealer(Beta)")
+Plot:TextBox(
+    "Name",
+    function(h)
+        _G.WipeBaseName = h
+    end,
+    LP.Name,
+    true
+)
+
+
+
+
+Plot:DropDown(
+	"Steal Items",
+	function(b)
+if b == "Steal Axes" then
+        print(_G.WipeBaseName)
+positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(4,2,4)
+ local BaseLoc = nil
+  for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+    if v.Owner.Value == game.Players.LocalPlayer then
+      BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+    end
+  end
+  
+   for i,v in pairs (game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.WipeBaseName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Tool" then
+if v.PrimaryPart then
+
+           game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+          end
+       end
+    end
+  end
+   
+	elseif b == "Steal Gifts" then
+	print(_G.WipeBaseName)
+positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(4,2,4)
+ local BaseLoc = nil
+  for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+    if v.Owner.Value == game.Players.LocalPlayer then
+      BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+    end
+  end
+
+
+   for i,v in pairs (game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.WipeBaseName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Gift" then
+if v.PrimaryPart then
+
+  game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+  v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+  game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+  v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+ wait()
+          end
+       end
+    end
+  end
+	elseif b == "Steal Loose Items" then
+		 print(_G.WipeBaseName)
+positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(4,2,4)
+ local BaseLoc = nil
+  for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+    if v.Owner.Value == game.Players.LocalPlayer then
+      BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+    end
+  end
+  
+   for i,v in pairs (game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.WipeBaseName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Loose Item" then
+if v.PrimaryPart then
+
+           game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+          end
+       end
+    end
+  end
+elseif b == "Steal Furniture" then
+		 print(_G.WipeBaseName)
+positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(4,2,4)
+ local BaseLoc = nil
+  for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+    if v.Owner.Value == game.Players.LocalPlayer then
+      BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+    end
+  end
+  
+   for i,v in pairs (game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.WipeBaseName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Furniture" then
+if v.PrimaryPart then
+
+           game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+          end
+       end
+    end
+  end
+	elseif b == "Steal Boxed Vehicles" then
+		 print(_G.WipeBaseName)
+positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(4,2,4)
+ local BaseLoc = nil
+  for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+    if v.Owner.Value == game.Players.LocalPlayer then
+      BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+    end
+  end
+
+
+   for i,v in pairs (game.Workspace.PlayerModels:GetChildren()) do
+if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.WipeBaseName] then
+if v:FindFirstChild("Type") and v.Type.Value == "Vehicle" then
+if v.PrimaryPart then
+
+           
+           game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+           game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.PrimaryPart)
+           v.PrimaryPart.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+          wait()
+          end
+       end
+    end
+   end
+	elseif b == "Steal Wood" then
+	    		 print(_G.WipeBaseName)
+positionHuman = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(4,2,4)
+ local BaseLoc = nil
+  for i, v in pairs(game.Workspace.Properties:GetChildren()) do
+    if v.Owner.Value == game.Players.LocalPlayer then
+      BaseLoc = v.OriginSquare.Position + Vector3.new(0,5,0)
+    end
+  end
+			for i,v in pairs(workspace.PlayerModels:GetChildren()) do 
+				if v:FindFirstChild("Owner") and v.Owner.Value == game.Players[_G.BaseDropName] and v:FindFirstChild("TreeClass") then
+					print(v.Owner.Value)
+          if v.WoodSection then
+               game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.WoodSection)
+              v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+              game.ReplicatedStorage.Interaction.ClientRequestOwnership:FireServer(v.WoodSection)
+              v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+              game.ReplicatedStorage.Interaction.ClientIsDragging:FireServer(v.WoodSection)
+              v.WoodSection.CFrame = CFrame.new(BaseLoc.X,BaseLoc.Y,BaseLoc.Z)
+              wait()
+			end
+				end
+			end
+	end
+		end,
+
+			{
+	    
+		"Steal Axes",
+		"Steal Gifts",
+		"Steal Loose Items",
+		"Steal Furniture",
+		"Steal Furniture",
+		"Steal Boxed Vehicles",
+		"Steal Wood"
+	}
+)
+	
+baseoptions:Button(
+	"Info",
+function ()
+		lib:Notify('Calamity Notice', "You have to be whitelisted and near the item you want to tp(will update)")
+end,
+true
+)
+local MusicPlayerCore = main:Category("5494154287")
+
+local MusicPlayer = MusicPlayerCore:Section("Music Player")
+
+MusicPlayer:TextBox(
+	"MusicID",
+	function(n)
+		_G.MusicPlayerID = n
+		print(n)
+	end,
+	"Enter The Roblox Song ID Here",
+	nil
+)
+
+
+MusicPlayer:Button(
+    "Play Song",
+    function()
+        for i,v in pairs(game.workspace:GetChildren()) do
+            if v.Name == "MusicPlayer" then
+                v:Destroy()
+            end
+         end
+local SoundSystem = Instance.new("Sound")
+SoundSystem.SoundId = "http://www.roblox.com/asset/?id=".._G.MusicPlayerID
+SoundSystem.Volume = .5
+SoundSystem.Parent = workspace
+SoundSystem.PlaybackSpeed = 1
+SoundSystem.Looped = true
+SoundSystem:Play()
+wait()
+SoundSystem.Name = "MusicPlayer"
+end 
+)
+
+MusicPlayer:Button(
+    "Stop Song",
+    function()
+    for i,v in pairs(game.workspace:GetChildren()) do
+            if v.Name == "MusicPlayer" then
+                v:Destroy()
+            end
+         end
+      end,
+  true
+)
+MusicPlayer:Button(
+    "Info",
+    function()
+       lib:Notify("Calamity Info", "This is clientsided, only you can hear it")
+         end
+)
+local gggamner = main:Category("5491025260")
+
+local moncat = main:Category("5182003557")
+
+local settings = moncat:Section("Settings")
+
+settings:KeyBind(
+	"KeyBind", 
+	function()
+		game.CoreGui.Calamity.Enabled = not game.CoreGui.Calamity.Enabled
+	end
+)
+
+
+local t1
+
+if syn then
+    t1 = true
+    print('synapse loaded! gg u')
+else
+    t1 = false
+end
+
+settings:Toggle(
+    "DragBuy",
+    function(j)
+        if j then
+            _G.SafeBuy = true
+        else
+            _G.SafeBuy = false
+            if not syn then
+                lib:Notify('Calamity Bugs', "Instant Buy only works with Synapse, if you don't have Synapse then use switch on!")
+            end
+        end
+    end,
+    not t1
+)
+
+settings:Toggle(
+    "Instant TP",
+    function(ja)
+        if ja then
+            _G.InstaTP = true
+            if not syn then
+                lib:Notify('Calamity Bugs', "Instant TP only works with Synapse, if you don't have Synapse then use switch off!")
+            end
+        else
+            _G.InstaTP = false 
+        end
+    end,
+    t1
+)
+
+
+settings:Toggle(
+	"Anti Kick",
+	function(m)
+		if m then
+	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:FindFirstChild("Owner") and v.Owner.Value ==  not game.Players.LocalPlayer then 
+			-- Script generated by SimpleSpy - credits to exxtremewa#9394
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0 
+	   end
+	end
+  end
+end,
+true
+)  
+
+settings:Button(
+    "Known Bugs",
+    function(state)
+        lib:Notify('Calamity Bugs', "Instant autobuy only works with Synapse, if you don't have Synapse then use Drag buy")
+    end
+)
+settings:Button(
+    "Version Information",
+    function(state)
+        lib:Notify('Calamity Info', "Version 1.2b")
+    end
+)
+
+
+
+local colour = gggamner:Section("Main Gui Colour")
+
+_G.colortop = Color3.fromRGB(33, 55, 167)
+_G.colorbottom = Color3.fromRGB(33, 55, 167)
+
+colour:ColorPicker(
+    "Top Bar", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+    	_G.colortop = Color3.fromRGB(r,g,b)
+        game:GetService("CoreGui").Calamity.MainBody.TopBar.UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(r,g,b)), ColorSequenceKeypoint.new(1.00, _G.colorbottom)}
+    end,
+    Color3.fromRGB(33, 55, 167)
+)
+
+colour:ColorPicker(
+    "Bottom Bar", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+    	_G.colorbottom = Color3.fromRGB(r,g,b)
+        game:GetService("CoreGui").Calamity.MainBody.TopBar.UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, _G.colortop), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(r,g,b))}
+    end,
+    Color3.fromRGB(33, 55, 167)
+)
+
+colour:ColorPicker(
+    "Side Icons", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+    	for i,v in pairs(game:GetService("CoreGui").Calamity.MainBody.CategoryContainer:GetDescendants()) do
+    	    if v.ClassName ==  ("ImageButton") then
+    	        v.ImageColor3 = Color3.fromRGB(r,g,b)
+    	    end
+	   end
+end,
+Color3.fromRGB(255,255,255)
+)
+
+
+
+local colour = gggamner:Section("Slider Colour")
+
+colour:ColorPicker(
+    "Slider1", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+ for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageLabel")  then
+                    if v:FindFirstChild("SliderDarkOutline") then
+                       v.SliderDarkOutline.SliderInner.SliderButton.SliderInner.ImageColor3 = Color3.fromRGB(r,g,b)
+                end
+            end
+        end
+    end,
+    Color3.fromRGB(18, 27, 71)
+)
+
+
+
+colour:ColorPicker(
+    "Slider2", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+          for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageLabel")  then
+                    if v:FindFirstChild("SliderDarkOutline") then
+                    v.ImageColor3 = Color3.fromRGB(r,g,b)
+                end
+            end
+        end
+    end,
+    Color3.fromRGB(55, 55, 55)
+)
+
+colour:ColorPicker(
+    "Slider3", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+          for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageLabel")  then
+                    if v:FindFirstChild("SliderDarkOutline") then
+                    v.SliderDarkOutline.ImageColor3 = Color3.fromRGB(r,g,b)
+                end
+            end
+        end
+    end,
+    Color3.fromRGB(55, 55, 55)
+)
+
+colour:Slider(
+	"Example",
+	function()
+		
+	end,
+	1,10
+)
+local colour = gggamner:Section("Toggle Colours")
+colour:ColorPicker(
+    "Toggle Colour", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+ for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageButton")  then
+                    if v:FindFirstChild("ToggleFrame") then
+                    v.ToggleFrame.ToggleFrame.ToggleFrame.ImageColor3 = Color3.fromRGB(r,g,b)
+                       
+                end
+            end
+        end
+    end,
+     Color3.fromRGB(255, 255, 255)
+)
+
+colour:ColorPicker(
+    "Toggle1", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+ for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageButton")  then
+                    if v:FindFirstChild("ToggleFrame") then
+                    v.ToggleFrame.ImageColor3 = Color3.fromRGB(r,g,b)
+                       
+                end
+            end
+        end
+    end,
+    Color3.fromRGB(55,55,55)
+)
+
+colour:ColorPicker(
+    "Toggle2", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+ for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageButton")  then
+                    if v:FindFirstChild("ToggleFrame") then
+                    v.ToggleFrame.ToggleFrame.ImageColor3 = Color3.fromRGB(r,g,b)
+                       
+                end
+            end
+         end
+    end,
+    Color3.fromRGB(45,45,45)
+
+
+)
+
+colour:ColorPicker(
+    "Toggle3", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+ for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageButton")  then
+                    if v:FindFirstChild("ToggleFrame") then
+                    v.ToggleFrame.Parent.ImageColor3 = Color3.fromRGB(r,g,b)
+                       
+                end
+            end
+         end
+    end,
+     Color3.fromRGB(55,55,55)
+)
+colour:Toggle(
+	"Example",
+	function(state)
+end
+)
+
+
+local colour = gggamner:Section("Button Colours")
+
+colour:ColorPicker(
+    "Button1", 
+    function(Color)
+       
+    	local r,g,b = Color.r, Color.g, Color.b
+            for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageLabel")  then
+                    if v:FindFirstChild("ImageLabel") then
+                        if v.ImageLabel:FindFirstChild("TextButton") then
+                             v.ImageColor3 = Color3.fromRGB(r,g,b)
+                             end
+                       end
+                   end
+               end
+          end,
+    Color3.fromRGB(55,55,55)
+  )
+
+colour:ColorPicker(
+    "Button2", 
+    function(Color)
+       
+    	local r,g,b = Color.r, Color.g, Color.b
+           for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("ImageLabel")  then
+                    if v:FindFirstChild("ImageLabel") then
+                        if v.ImageLabel:FindFirstChild("TextButton") then
+                             v.ImageLabel.ImageColor3 = Color3.fromRGB(r,g,b)
+                           end
+                       end
+                   end
+               end
+          end,
+    Color3.fromRGB(55,55,55)
+  )
+	    
+colour:Button(
+    "Colour Info",
+    function(state)
+        lib:Notify('Calamity Warning', "Saving themes is not an option right now but enjoy this version until we implement it")
+    end
+)
+--[[
+colour:ColorPicker(
+    "Text", 
+    function(Color)
+    	local r,g,b = Color.r, Color.g, Color.b
+        for i,v in  pairs (game.CoreGui.Calamity.MainBody:GetDescendants()) do
+                if v.ClassName == ("TextLabel") then
+                    v.TextColor3 = Color3.fromRGB(r,g,b)
+                end
+              end
+            end,
+    Color3.fromRGB(255,255,255)
+)
+]]
+local credits = moncat:Section("Credits")
+
+credits:TextLabel(
+	"Made by fxrd#0018 and FindFirstAncestor#7278"
+)
+
+credits:TextLabel(
+	"xTheAlex14#3200"
+)
+
+credits:TextLabel(
+	"Alpha#9570"
+)
+
+
+game.Workspace.Speed.Value = 16
+
+while wait() do
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.SpeedVal
+end
+else
+   Instance.new("Message",workspace).Text = "You are not a beta tester!"
+    wait(5)
+     game:shutdown()
+end
+end
