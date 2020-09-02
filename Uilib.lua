@@ -103,7 +103,7 @@ function lib:Notify(top, bottom)
 	LogoText_4.Position = UDim2.new(0.0520840697, 0, -0.00833334029, 0)
 	LogoText_4.Size = UDim2.new(0, 87, 0, 30)
 	LogoText_4.Font = Enum.Font.GothamBold
-	LogoText_4.Text = "Ancestor"
+	LogoText_4.Text = " Ancestor"
 	LogoText_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 	LogoText_4.TextSize = 27.000
  
@@ -340,7 +340,7 @@ function lib:Main()
         Position = UDim2.new(0.0331138819, 0, 0.125, 0),
         Size = UDim2.new(0, 87, 0, 30),
         Font = Enum.Font.GothamBold,
-        Text = "Ancestor",
+        Text = " Ancestor",
         TextColor3 = Color3.fromRGB(255, 255, 255),
         TextSize = 27.000,
     })
