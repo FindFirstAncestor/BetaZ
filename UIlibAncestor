@@ -421,7 +421,7 @@ function lib:Main()
             Selectable = false,
             Size = UDim2.new(0, 503, 0, 262),
             ScrollBarThickness = 0,
-            CanvasSize = UDim2.new(0,0,0,300),
+            CanvasSize = UDim2.new(0,0,0,250),
             Visible = false,
         })
 
