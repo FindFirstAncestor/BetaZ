@@ -979,6 +979,7 @@ function lib:Main()
                         elseif i.KeyCode == Enum.KeyCode.Backspace then
                             kb.kb.Text = "None"
                             kbind = nil
+                            debounce = false
                             if c then
                                 c:Disconnect()
                                 c = nil
@@ -1689,3 +1690,5 @@ function lib:Main()
 
     return main
 end
+
+return lib
