@@ -106,7 +106,7 @@ function lib:Notify(top, bottom)
 	LogoText_4.Text = " Ancestor"
 	LogoText_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 	LogoText_4.TextSize = 27.000
-
+	-A
 	UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(38, 38, 38)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(18, 18, 18))}
 	UIGradient_2.Rotation = 90
 	UIGradient_2.Parent = notibody
