@@ -1,3 +1,39 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@FindFirstAncestor 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+FindFirstAncestor
+/
+Ancestor
+1
+01
+Code
+Issues
+Pull requests
+2
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Ancestor/UIlibAncestor
+@FindFirstAncestor
+FindFirstAncestor Update UIlibAncestor
+Latest commit b1912ff 1 hour ago
+ History
+ 1 contributor
+1688 lines (1471 sloc)  70.4 KB
+  
 local lib = {}
 
 function lib:Create(type, proprieties)
@@ -960,13 +996,18 @@ function lib:Main()
                     kbind = Default
                     kb.kb.Text = kbind.Name
                 end
-
+                local debounce = false
                 kb.kb.MouseButton1Click:Connect(function()
+                    if debounce then 
+                        return
+                    end
+                    debounce = true
                     kb.kb.Text = "..."
                     c = UIS.InputBegan:Connect(function(i)
                         if i.UserInputType.Name == "Keyboard" and i.KeyCode ~= Enum.KeyCode.Backspace then
                             kb.kb.Text = i.KeyCode.Name
                             kbind = i.KeyCode
+                            debounce = false
                             if c then
                                 c:Disconnect()
                                 c = nil
