@@ -106,6 +106,7 @@ function lib:Notify(top, bottom)
 	LogoText_4.Text = " Ancestor"
 	LogoText_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 	LogoText_4.TextSize = 27.000
+
 	UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(38, 38, 38)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(18, 18, 18))}
 	UIGradient_2.Rotation = 90
 	UIGradient_2.Parent = notibody
@@ -984,14 +985,14 @@ function lib:Main()
                             end
                         end
                     end)
-
-                    game:GetService("UserInputService").InputBegan:Connect(function(i, GPE)
-                        if kbind and i.KeyCode == kbind and not GPE then
-                            if CallBack then
-                                CallBack(i.KeyCode)
-                            end
+                end)
+                
+                game:GetService("UserInputService").InputBegan:Connect(function(i, GPE)
+                    if kbind and i.KeyCode == kbind and not GPE then
+                        if CallBack then
+                            CallBack(i.KeyCode)
                         end
-                    end)
+                    end
                 end)
 
                 categories.Container.CanvasSize = categories.Container.CanvasSize + UDim2.new(0,0,0,40)
@@ -1688,5 +1689,3 @@ function lib:Main()
 
     return main
 end
-
-return lib 
